@@ -23,87 +23,8 @@ STAFF_CHOICES = [
 class CustomUser(AbstractUser):
     is_superuser = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
-    is_merchant = models.BooleanField(default=False)
     is_teacher = models.BooleanField(default=False)
     is_student = models.BooleanField(default=True)
-    
-    
-    
-class AdminUser(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-    profile_pic=models.ImageField(upload_to="images/profile/admin")
-    profile_pic_thumbnail = ImageSpecField(source='profile_pic',
-                                           processors=[ResizeToFill(100,100)],
-                                           format='JPEG',
-                                           options={'quality':100}
-                                           )
-    created_at = models.DateTimeField(auto_now_add=True)
-    
-    def __str__(self):
-        return self.user.username
-    
-class StaffUser(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-    profile_pic=models.ImageField(upload_to="images/profile/staff")
-    profile_pic_thumbnail = ImageSpecField(source='profile_pic',
-                                           processors=[ResizeToFill(400,400)],
-                                           format='JPEG',
-                                           options={'quality':100}
-                                           )
-    position = models.CharField(choices=STAFF_CHOICES, max_length=255)
-    description = models.TextField(default="No description")
-    created_at = models.DateTimeField(auto_now_add=True)
-    list_on_about = models.BooleanField(default=False)
-    facebook = models.CharField(max_length=255, blank=True, null=True)
-    twitter = models.CharField(max_length=255, blank=True, null=True)
-    linked_in = models.CharField(max_length=255, blank=True, null=True)
-    google_plus = models.CharField(max_length=255, blank=True, null=True)
-    
-    def __str__(self):
-        return self.user.username
-    
-class MerchantUser(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-    profile_pic=models.ImageField(upload_to="images/profile/merchant")
-    profile_pic_thumbnail = ImageSpecField(source='profile_pic',
-                                           processors=[ResizeToFill(100,100)],
-                                           format='JPEG',
-                                           options={'quality':100}
-                                           )
-    company_name = models.CharField(max_length=255)
-    address = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    
-    def __str__(self):
-        return self.user.username
-
-class BloggerUser(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-    blog_name = models.CharField(max_length=255)
-    profile_pic=models.ImageField(upload_to="images/profile/customer")
-    profile_pic_thumbnail = ImageSpecField(source='profile_pic',
-                                           processors=[ResizeToFill(100,100)],
-                                           format='JPEG',
-                                           options={'quality':100}
-                                           )
-    bio = models.TextField(blank=True, null=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"{self.blog_name} - {self.user.username}"
-    
-class CustomerUser(models.Model):
-    user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
-    profile_pic=models.ImageField(upload_to="images/profile/customer")
-    profile_pic_thumbnail = ImageSpecField(source='profile_pic',
-                                           processors=[ResizeToFill(100,100)],
-                                           format='JPEG',
-                                           options={'quality':100}
-                                           )
-    created_at = models.DateTimeField(auto_now_add=True)
-    
-    def __str__(self):
-        return self.user.username
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
