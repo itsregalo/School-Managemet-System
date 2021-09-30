@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Kingster &#8211; School, College &amp; University HTML Template SHARED ON THEMELOCK.COM</title>
+    <title>Sunrise &#8211; Academye &amp; Your Best Academy School</title>
 
     <link rel='stylesheet' href="{% static 'plugins/goodlayers-core/plugins/combine/style.css' %}" type='text/css' media='all' />
     <link rel='stylesheet' href='{% static "plugins/goodlayers-core/include/css/page-builder.css" %}' type='text/css' media='all' />
@@ -44,11 +44,8 @@
                     <div class="kingster-mobile-menu"><a class="kingster-mm-menu-button kingster-mobile-menu-button kingster-mobile-button-hamburger" href="#kingster-mobile-menu"><span></span></a>
                         <div class="kingster-mm-menu-wrap kingster-navigation-font" id="kingster-mobile-menu" data-slide="right">
                             <ul id="menu-main-navigation" class="m-menu">
-                                <li class="menu-item menu-item-home current-menu-item menu-item-has-children"><a href="index.html">Home</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item menu-item-home"><a href="index.html">Homepage 1</a></li>
-                                        <li class="menu-item"><a href="homepage-2.html">Homepage 2</a></li>
-                                    </ul>
+                                <li class="menu-item menu-item-home current-menu-item menu-item-has-children"><a href="{% url 'core:index' %}">Home</a>
+                                    
                                 </li>
                                 <li class="menu-item menu-item-has-children"><a href="#">Pages</a>
                                     <ul class="sub-menu">
@@ -211,11 +208,8 @@
                         <div class="kingster-navigation kingster-item-pdlr clearfix ">
                             <div class="kingster-main-menu" id="kingster-main-menu">
                                 <ul id="menu-main-navigation-1" class="sf-menu">
-                                    <li class="menu-item menu-item-home current-menu-item menu-item-has-children kingster-normal-menu"><a href="index.html" class="sf-with-ul-pre">Home</a>
-                                        <ul class="sub-menu">
-                                            <li class="menu-item menu-item-home" data-size="60"><a href="index.html">Homepage 1</a></li>
-                                            <li class="menu-item" data-size="60"><a href="homepage-2.html">Homepage 2</a></li>
-                                        </ul>
+                                    <li class="menu-item menu-item-home current-menu-item menu-item-has-children kingster-normal-menu"><a href="{% url 'core:index' %}" class="sf-with-ul-pre">Home</a>
+                                        
                                     </li>
                                     <li class="menu-item menu-item-has-children kingster-normal-menu"><a href="#" class="sf-with-ul-pre">Pages</a>
                                         <ul class="sub-menu">
