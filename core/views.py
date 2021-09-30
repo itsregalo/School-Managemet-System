@@ -32,3 +32,6 @@ def ContactUs(request, *args, **kwargs):
 
 def AboutUs(request, *args, **kwargs):
     return render(request, 'about-us.html')
+
+def ContactPage(request, *args, **kwargs):
+    return render(request, 'contact.html')
