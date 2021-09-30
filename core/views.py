@@ -29,3 +29,6 @@ def ContactUs(request, *args, **kwargs):
         messages.success(request, "Thank you for your feedback")
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     return render(request, 'contact-us.html')
+
+def AboutUs(request, *args, **kwargs):
+    return render(request, 'about-us.html')
