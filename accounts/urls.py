@@ -11,4 +11,5 @@ urlpatterns = [
     path('logout/', LogOutView, name='logout'),
     path('activate/<uidb64>/<token>/', VerificationView, name='activate'),
     path('request-reset-email/', RequestResetEmail, name="request-reset-email"),
-    path('reset-password/<uidb64>/<token>/', ResetPasswordView, name='reset-password'),
+    path('reset-password/<uidb64>/<token>/', ResetPasswordView, name='reset-password')
+]
