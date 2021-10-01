@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'studentportal',
     'accounts',
     'utilities',
-    'finance',
 
     'rest_framework',
     'rest_framework.authtoken',
