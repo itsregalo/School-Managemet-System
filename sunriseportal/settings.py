@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'accounts',
     'utilities',
     'finance',
+    'academics',
+    'admissions',
 
     'rest_framework',
     'rest_framework.authtoken',
