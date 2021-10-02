@@ -23,5 +23,4 @@ urlpatterns = [
     path('finance/', include('finance.urls', namespace='finance')),
     path('utilities/', include('utilities.urls', namespace='utilities')),
     path('student-portal/', include('studentportal.urls', namespace='studentportal')),
-
 ]
