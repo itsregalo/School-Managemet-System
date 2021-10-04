@@ -13,13 +13,3 @@ def create_user_profile(sender,instance,created,**kwargs):
 @receiver(post_save, sender=CustomUser)
 def save_user_profile(sender, instance, **kwargs):
     instance.profile.save()
-    if instance.is_superuser==True:
-        instance.adminuser.save()
-    if instance.is_staff==True:
-        instance.staffuser.save()
-    if instance.is_merchant==True:
-        instance.merchantuser.save()
-    if instance.is_customer==True:
-        instance.customeruser.save()
-    if instance.is_blogger==True:
-        instance.bloggeruser.save()
