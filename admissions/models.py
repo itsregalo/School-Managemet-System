@@ -14,11 +14,11 @@ class Student(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.admission_no:
-            self.admission_no = f"{Student.objects.all.count()+1}"
+            self.admission_no = f"{Student.objects.all().count()+1}"
         return super(Student, self).save(*args, **kwargs)
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+        return f"{self.id}. {self.first_name} {self.last_name}"
 
     def parent(self):
         return Parent.objects.filter(student__icontains=self)
