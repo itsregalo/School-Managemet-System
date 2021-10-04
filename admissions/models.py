@@ -32,5 +32,5 @@ class Parent(models.Model):
     adress = models.TextField()
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name} - {self.student.first_name} {self.student.last_name}"
+        return f"{self.first_name} {self.last_name}"
     
