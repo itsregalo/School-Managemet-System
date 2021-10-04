@@ -9,6 +9,7 @@ class Student(models.Model):
     middle_name = models.CharField(max_length=100, blank=True)
     last_name = models.CharField(max_length=100)
     adm_timestamp = models.DateTimeField(default=datetime.datetime.now())
+    has_cleared = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         if not self.admission_no:
