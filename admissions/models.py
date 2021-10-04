@@ -16,9 +16,12 @@ class Student(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
+
+    def parent(self):
+        return Parent.objects.filter(student__icontains=self)
     
 class Parent(models.Model):
-    student = models.ForeignKey(Student, on_delete=models.DO_NOTHING)
+    students = models.ManyToManyField(Student)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     phone = models.CharField(max_length=254)
