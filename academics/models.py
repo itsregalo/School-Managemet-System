@@ -27,4 +27,8 @@ class Subject(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
 
+
+class Class(models.Model):
+    name = models.CharField(max_length=254)
+
     
