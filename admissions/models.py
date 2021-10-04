@@ -1,7 +1,10 @@
 from django.db import models
+from django.conf import settings
+from django.db.models.deletion import DO_NOTHING
 
-
+User=settings.AUTH_USER_MODEL
 class Student(models.Model):
+    user = models.OneToOneField(User, on_delete=DO_NOTHING)
     admission_no = models.CharField(unique=True, max_length=10, blank=True)
     first_name = models.CharField(max_length=100)
     middle_name = models.CharField(max_length=100, blank=True)

@@ -11,9 +11,8 @@ class CustomUserAdmin(UserAdmin):
             "fields": (
                 'is_superuser',
                 'is_staff',
-                'is_merchant',
-                'is_customer',
-                'is_blogger',
+                'is_teacher',
+                'is_student',
             ),
         }),
     )
