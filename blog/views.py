@@ -8,9 +8,7 @@ from .forms import BlogForm, CommentForm
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import HttpResponseRedirect
-from core.models import Tv, Episode, Movie, Video
 from itertools import chain
-
 from django.conf import settings
 from taggit.models import Tag
 
