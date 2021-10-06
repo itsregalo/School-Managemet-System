@@ -50,9 +50,9 @@ class Blog(models.Model):
     title = models.CharField(max_length=255)
     uploaded_by = models.ForeignKey(User, on_delete=DO_NOTHING)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    pic = models.ImageField(upload_to="images/blog")
+    pic = models.ImageField(upload_to="images/blog/%Y/%m/%d")
     pic_thumbnail = ImageSpecField(source='pic',
-                                   processors = [ResizeToFill(1920,1080)],
+                                   processors = [ResizeToFill(800,356)],
                                    format='JPEG',
                                    options = {'quality':100})
     content = RichTextField()
