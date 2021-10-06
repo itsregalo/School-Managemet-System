@@ -9,7 +9,7 @@ def IndexView(request, *args, **kwargs):
     return render(request, 'index.html')
 
 
-def Gallery(request, *args, **kwargs):
+def GalleryView(request, *args, **kwargs):
     images = Gallery.objects.filter(is_approved=False)
 
     context = {
