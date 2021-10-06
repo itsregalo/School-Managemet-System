@@ -1,12 +1,21 @@
 from django.shortcuts import render, HttpResponseRedirect
 from django.contrib import messages
 from django.core.mail import send_mail
+from .models import *
 # Create your views here.
 
 
 def IndexView(request, *args, **kwargs):
     return render(request, 'index.html')
 
+
+def Gallery(request, *args, **kwargs):
+    images = Gallery.objects.filter(is_approved=False)
+
+    context = {
+        'images':images
+    }
+    return render(request, 'core/gallery.html', context)
 
 def ContactUs(request, *args, **kwargs):
     if request.method == 'POST':
