@@ -15,8 +15,16 @@ class News(models.Model):
 
 class Gallery(models.Model):
     name = models.CharField(max_length=254)
-    pic = models.ImageField(upload_to="images/blog")
-    pic_thumbnail = ImageSpecField(source='pic',
-                                   processors = [ResizeToFill(1920,1080)],
+    image = models.ImageField(upload_to="images/gallery/%Y/%m/%d")
+    image_grid = ImageSpecField(source='image',
+                                   processors = [ResizeToFill(400,377)],
                                    format='JPEG',
                                    options = {'quality':100})
+    image_thumbnail = ImageSpecField(source='image',
+                                   processors = [ResizeToFill(1280,853)],
+                                   format='JPEG',
+                                   options = {'quality':100})
+
+    def __str__(self):
+        return self.name
+    
