@@ -20,7 +20,18 @@ class NewsCategory(models.Model):
 class Event(models.Model):
     title = models.CharField(max_length=254)
     location = models.CharField(max_length=254)
+    event_date = models.DateTimeField(blank=True, null=True)
+    slug = models.SlugField(blank=True)
+    is_approved = models.BooleanField(default=True)
 
+    class Meta:
+        verbose_name = 'Event'
+        verbose_name_plural = 'Events'
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = text.slugify(self.title)
+        return super(Event, self).save(*args, **kwargs)
 
 class News(models.Model):
     title = models.CharField(max_length=254)
