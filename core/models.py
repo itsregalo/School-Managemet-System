@@ -1,8 +1,21 @@
 from django.db import models
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
+from django.utils import text
 # Create your models here.
 
+class NewsCategory(models.Model):
+    name = models.CharField(max_length=254)
+    slug = models.SlugField(blank=True)
+
+    class Meta:
+        verbose_name = 'News Category'
+        verbose_name_plural = 'News Categories'
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = text.slugify(self.name)
+        return super(NewsCategory, self).save(*args, **kwargs)
 
 class Event(models.Model):
     title = models.CharField(max_length=254)
