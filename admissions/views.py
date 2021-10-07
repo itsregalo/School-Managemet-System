@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from admissions.models import Student
 
@@ -10,3 +10,11 @@ def StudentList(request, *args, **kwargs):
         'students':students
     }
     return render(request, 'athletics.html', context)
+
+
+def StudentDetail(request, pk, *args, **kwargs):
+    student = get_object_or_404(Student, pk=pk)
+    context = {
+        'student':student
+    }
+    return render(request, 'admission/sigle-student.html')
