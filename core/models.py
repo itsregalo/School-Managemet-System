@@ -11,6 +11,15 @@ class Event(models.Model):
 
 class News(models.Model):
     title = models.CharField(max_length=254)
+    image = models.ImageField(upload_to='images/news/%Y/%m/%d/')
+    news_icon = ImageSpecField(source='image',
+                                   processors = [ResizeToFill(150,150)],
+                                   format='JPEG',
+                                   options = {'quality':100})
+    main_icon = ImageSpecField(source='image',
+                                   processors = [ResizeToFill(400,245)],
+                                   format='JPEG',
+                                   options = {'quality':100})
     timestamp = models.DateTimeField(auto_now_add=True)
 
 class Gallery(models.Model):
