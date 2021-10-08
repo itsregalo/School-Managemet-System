@@ -3,6 +3,9 @@ from django.db.models.fields.related import ForeignKey
 from django.utils.text import slugify
 # Create your models here.
 
+
+class AcademicSession(models.Model):
+    name = models.CharField(max_length=250)
 class Department(models.Model):
     name = models.CharField(max_length=50)
     code = models.CharField(max_length=10)
