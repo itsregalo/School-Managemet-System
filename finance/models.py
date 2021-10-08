@@ -1,7 +1,9 @@
 from django.db import models
 from django.db.models.deletion import DO_NOTHING
-from academics.models import Class
+from academics.models import Class, StudentClass, AcademicSession, AcademicTerm
 from admissions.models import Student
+from django import utils
+from django.urls import reverse
 # Create your models here.
 
 
@@ -16,7 +18,6 @@ class FeeStructure(models.Model):
     
 
 class Invoice(models.Model):
-    class Invoice(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     session = models.ForeignKey(AcademicSession, on_delete=models.CASCADE)
     term = models.ForeignKey(AcademicTerm, on_delete=models.CASCADE)
@@ -58,3 +59,19 @@ class Invoice(models.Model):
 
     def get_absolute_url(self):
         return reverse("invoice-detail", kwargs={"pk": self.pk})
+
+
+class InvoiceItem(models.Model):
+    invoice = models.ForeignKey(Invoice, on_delete=models.CASCADE)
+    description = models.CharField(max_length=200)
+    amount = models.IntegerField()
+
+
+class Receipt(models.Model):
+    invoice = models.ForeignKey(Invoice, on_delete=models.CASCADE)
+    amount_paid = models.IntegerField()
+    date_paid = models.DateField(default=utils.timezone.now)
+    comment = models.CharField(max_length=200, blank=True)
+
+    def __str__(self):
+        return f"Receipt on {self.date_paid}"
