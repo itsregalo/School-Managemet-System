@@ -37,7 +37,6 @@ class StudentClass(models.Model):
         return self.name
 
     
-    
 class Department(models.Model):
     name = models.CharField(max_length=50)
     code = models.CharField(max_length=10)
@@ -63,14 +62,10 @@ class Subject(models.Model):
         if not self.slug:
             self.slug = slugify(self.name)
 
-
-class Class(models.Model):
-    name = models.CharField(max_length=254)
-
 class ExamBank(models.Model):
     name = models.CharField(max_length=254)
     examination_date = models.DateTimeField()
-    class_level = models.ForeignKey(Class, on_delete=models.CASCADE)
+    class_level = models.ForeignKey(StudentClass, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name

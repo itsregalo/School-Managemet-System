@@ -1,7 +1,12 @@
 from django.db import models
 from django.conf import settings
 from django.db.models.deletion import DO_NOTHING
-from  academics.models import Class
+from  academics.models import StudentClass
+from django.core.validators import RegexValidator
+from django.db import models
+from django.urls import reverse
+from django.utils import timezone
+
 
 User=settings.AUTH_USER_MODEL
 class Student(models.Model):
@@ -12,7 +17,7 @@ class Student(models.Model):
     last_name = models.CharField(max_length=100)
     adm_timestamp = models.DateTimeField(auto_now_add=True)
     has_cleared = models.BooleanField(default=False)
-    in_class = models.ForeignKey(Class, on_delete=DO_NOTHING)
+    in_class = models.ForeignKey(StudentClass, on_delete=DO_NOTHING)
 
     def save(self, *args, **kwargs):
         if not self.admission_no:
@@ -35,13 +40,6 @@ class Parent(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
-
-
-from django.core.validators import RegexValidator
-from django.db import models
-from django.urls import reverse
-from django.utils import timezone
-
 
 class Staff(models.Model):
     STATUS = [("active", "Active"), ("inactive", "Inactive")]
