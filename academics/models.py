@@ -3,39 +3,8 @@ from django.db.models.fields.related import ForeignKey
 from django.utils.text import slugify
 from admissions.models import Student
 from .utils import grade_score
+from core.models import StudentClass, AcademicSession, AcademicTerm
 # Create your models here.
-
-
-class AcademicSession(models.Model):
-    name = models.CharField(max_length=250, unique=True)
-    current = models.BooleanField(default=False)
-    class Meta:
-         ordering = '-name'
-
-    def __str__(self):
-        return self.name
-
-class AcademicTerm(models.Model):
-    name = models.CharField(max_length=254)
-    current = models.BooleanField(default=False)
-
-    class Meta:
-        ordering='-name'
-
-    def __str__(self):
-        return self.name
-
-class StudentClass(models.Model):
-    name = models.CharField(max_length=200, unique=True)
-
-    class Meta:
-        verbose_name = "Class"
-        verbose_name_plural = "Classes"
-        ordering = ["name"]
-
-    def __str__(self):
-        return self.name
-
     
 class Department(models.Model):
     name = models.CharField(max_length=50)

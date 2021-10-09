@@ -1,6 +1,6 @@
 from django.db import models
 from django.db.models.deletion import DO_NOTHING
-from academics.models import StudentClass, sStudentClass, AcademicSession, AcademicTerm
+from core.models import StudentClass, AcademicSession, AcademicTerm
 from admissions.models import Student
 from django import utils
 from django.urls import reverse
