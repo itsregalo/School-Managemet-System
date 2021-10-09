@@ -49,7 +49,7 @@ class Result(models.Model):
     exam_score = models.IntegerField(default=0)
 
     class Meta:
-        ordering = ["subject"]
+        ordering = ['subject']
 
     def __str__(self):
         return f"{self.student} {self.session} {self.term} {self.subject}"
