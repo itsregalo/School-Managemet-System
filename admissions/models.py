@@ -11,13 +11,13 @@ from django.utils import timezone
 User=settings.AUTH_USER_MODEL
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=DO_NOTHING)
-    admission_no = models.CharField(unique=True, max_length=10, blank=True)
+    admission_no = models.CharField(unique=True, max_length=10, blank=True, null=True)
     first_name = models.CharField(max_length=100)
     middle_name = models.CharField(max_length=100, blank=True)
     last_name = models.CharField(max_length=100)
     adm_timestamp = models.DateTimeField(auto_now_add=True)
     has_cleared = models.BooleanField(default=False)
-    in_class = models.ForeignKey(StudentClass, on_delete=DO_NOTHING)
+    in_class = models.ForeignKey(StudentClass, on_delete=DO_NOTHING, null=True)
 
     def save(self, *args, **kwargs):
         if not self.admission_no:
