@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.fields.related import ForeignKey
 from django.utils.text import slugify
 from admissions.models import Student
+from .utils import grade_score
 # Create your models here.
 
 
@@ -93,6 +94,6 @@ class Result(models.Model):
         return self.test_score + self.exam_score
 
     def grade(self):
-        return score_grade(self.total_score())
+        return grade_score(self.total_score())
 
     
