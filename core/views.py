@@ -23,6 +23,28 @@ def GalleryView(request, *args, **kwargs):
     }
     return render(request, 'core/gallery.html', context)
 
+def SchoolTour(request, *args, **kwargs):
+    if request.method == 'POST':
+        full_name = request.POST.get('your-name')
+        date = request.POST.get('tour-time')
+        phone = request.POST.get('your-phone')
+        email = request.POST.get('your-email')
+        special_request = request.POST.get('special-request')
+
+        if full_name == "":
+            messages.error(request, "Field cannot be blank")
+            if date == "":
+                messages.error(request, "Field cannot be blank")
+                if phone == "":
+                    messages.error(request, "Field cannot be blank")
+                    if email == "":
+                        messages.error(request, "Field cannot be blank")
+                        if special_request == "":
+                            messages.error(request, "Field cannot be blank")
+
+        
+
+
 def ContactUs(request, *args, **kwargs):
     if request.method == 'POST':
         name = request.POST['first_name']
