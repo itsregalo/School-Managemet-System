@@ -48,4 +48,14 @@ def ContactPage(request, *args, **kwargs):
 
 
 def EmailSubscribersView(request, *args, **kwargs):
-    pass
+    sub_emails = EmailSubscibers.objects.filter(is_verified=True)
+    if request.method == 'POST':
+        email = request.POST.get('sub_mail')
+        if email == "":
+            messages.error(request, 'Cannot be blank')
+        if sub_emails.objects.filter(email=email).exists():
+            messages.error(request, 'The email is already subscribed')
+        new_sub = EmailSubscibers.objects.create(email=email)
+        new_sub.save()
+        messages.success(request, 'Successfully subscribed')
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
