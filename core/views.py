@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponseRedirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from .models import *
+from accounts.models import EmailSubscibers
 # Create your views here.
 
 
@@ -44,3 +45,7 @@ def AboutUs(request, *args, **kwargs):
 
 def ContactPage(request, *args, **kwargs):
     return render(request, 'contact.html')
+
+
+def EmailSubscribersView(request, *args, **kwargs):
+    pass

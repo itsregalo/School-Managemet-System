@@ -54,6 +54,7 @@ class PhoneNumber(models.Model):
 class EmailSubscibers(models.Model):
     email = models.EmailField(max_length=255)
     date_added = models.DateTimeField(auto_now_add=True)
+    is_verified = models.BooleanField(default=False)
     
     def __str__(self):
         return self.email
