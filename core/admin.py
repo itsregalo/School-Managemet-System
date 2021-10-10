@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import (Gallery, AcademicSession, AcademicTerm,
-                        StudentClass, NewsCategory, News, Event)
+                        StudentClass, NewsCategory, News, Event,
+                        SchoolTourRequest)
 # Register your models here.
 
 
@@ -11,3 +12,4 @@ admin.site.register(StudentClass)
 admin.site.register(NewsCategory)
 admin.site.register(News)
 admin.site.register(Event)
+admin.site.register(SchoolTourRequest)
