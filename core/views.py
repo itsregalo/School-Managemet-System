@@ -26,7 +26,8 @@ def GalleryView(request, *args, **kwargs):
 def SchoolTour(request, *args, **kwargs):
     if request.method == 'POST':
         full_name = request.POST.get('your-name')
-        date = request.POST.get('tour-time')
+        date = request.POST.get('tour-date')
+        time = request.POST.get('tour-time')
         phone = request.POST.get('your-phone')
         email = request.POST.get('your-email')
         special_request = request.POST.get('special-request')
@@ -35,15 +36,18 @@ def SchoolTour(request, *args, **kwargs):
             messages.error(request, "Field cannot be blank")
             if date == "":
                 messages.error(request, "Field cannot be blank")
-                if phone == "":
+                if time == "":
                     messages.error(request, "Field cannot be blank")
-                    if email == "":
+                    if phone == "":
                         messages.error(request, "Field cannot be blank")
-                        if special_request == "":
+                        if email == "":
                             messages.error(request, "Field cannot be blank")
+                            if special_request == "":
+                                messages.error(request, "Field cannot be blank")
         new_request = SchoolTourRequest.objects.create(
             full_name=full_name,
             date=date,
+            time=time,
             phone=phone,
             email=email,
             special_request=special_request

@@ -96,6 +96,7 @@ class Gallery(models.Model):
 class SchoolTourRequest(models.Model):
     full_name = models.CharField(max_length=254)
     date = models.DateField()
+    time = models.TimeField()
     phone = models.CharField(max_length=13, help_text="e.g 254712860997")
     email = models.EmailField(blank=True, null=True)
     special_request = models.TextField()

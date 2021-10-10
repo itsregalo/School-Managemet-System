@@ -10,5 +10,6 @@ urlpatterns = [
     path('gallery/', GalleryView, name='gallery'),
     path('about-us/', AboutUs, name='about-us'),
     path('contact-us/', ContactUs, name='contact-us'),
-    path('contact/', ContactPage, name='contact')
+    path('contact/', ContactPage, name='contact'),
+    path('school-tour/', SchoolTour, name='school-tour')
 ]
