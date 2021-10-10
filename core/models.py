@@ -91,4 +91,24 @@ class Gallery(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class SchoolTourRequest(models.Model):
+    full_name = models.CharField(max_length=254)
+    date = models.DateField()
+    phone = models.CharField(max_length=13, help_text="e.g 254712860997")
+    email = models.EmailField(blank=True, null=True)
+    special_request = models.TextField()
+    is_confirmed = models.BooleanField(default=False)
+    is_complete = models.BooleanField(default=False)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'School Tour Request'
+        verbose_name_plural = 'School Tour Requests'
+        ordering = ['timestamp']
+
+    def __str__(self):
+        return self.full_name
+    
     

@@ -41,6 +41,7 @@ def SchoolTour(request, *args, **kwargs):
                         messages.error(request, "Field cannot be blank")
                         if special_request == "":
                             messages.error(request, "Field cannot be blank")
+    return render(request, 'school-tour.html')
 
         
 
