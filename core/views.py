@@ -12,6 +12,9 @@ def IndexView(request, *args, **kwargs):
 def ApplicationView(request, *args, **kwargs):
     return render(request, 'apply-procedure.html')
 
+def AcademyLife(request, *args, **kwargs):
+    return render(request, 'academy-life.html')
+
 def GalleryView(request, *args, **kwargs):
     images = Gallery.objects.filter(is_approved=False)
 
