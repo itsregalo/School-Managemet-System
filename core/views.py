@@ -41,6 +41,20 @@ def SchoolTour(request, *args, **kwargs):
                         messages.error(request, "Field cannot be blank")
                         if special_request == "":
                             messages.error(request, "Field cannot be blank")
+        new_request = SchoolTourRequest.objects.create(
+            full_name=full_name,
+            date=date,
+            phone=phone,
+            email=email,
+            special_request=special_request
+        )
+        new_request.save()
+
+        #SEND MAIL
+        subject = 'RETECH ACADEMY TOUR'
+        message = 'Thank you for reaching us, We will contact you with the datails you have provided'
+        send_mail(subject,message, email,["contact@greengarnetsfilms.com"],fail_silently=True)
+        return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     return render(request, 'school-tour.html')
 
         
