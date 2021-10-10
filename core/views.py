@@ -9,6 +9,8 @@ from accounts.models import EmailSubscibers
 def IndexView(request, *args, **kwargs):
     return render(request, 'index.html')
 
+def ApplicationView(request, *args, **kwargs):
+    return render(request, 'apply-procedure.html')
 
 def GalleryView(request, *args, **kwargs):
     images = Gallery.objects.filter(is_approved=False)
@@ -45,7 +47,6 @@ def AboutUs(request, *args, **kwargs):
 
 def ContactPage(request, *args, **kwargs):
     return render(request, 'contact.html')
-
 
 def EmailSubscribersView(request, *args, **kwargs):
     sub_emails = EmailSubscibers.objects.filter(is_verified=True)

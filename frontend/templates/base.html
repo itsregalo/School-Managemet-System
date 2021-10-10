@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Sunrise &#8211; Academye &amp; Your Best Academy School</title>
+    <title>RETECH &#8211; Academy &amp; Your Best Academy School</title>
 
     <link rel='stylesheet' href="{% static 'plugins/goodlayers-core/plugins/combine/style.css' %}" type='text/css' media='all' />
     <link rel='stylesheet' href='{% static "plugins/goodlayers-core/include/css/page-builder.css" %}' type='text/css' media='all' />
@@ -47,9 +47,9 @@
                                 <li class="menu-item menu-item-home current-menu-item menu-item-has-children"><a href="{% url 'core:index' %}">Home</a>
                                     
                                 </li>
-                                <li class="menu-item menu-item-has-children"><a href="#">Pages</a>
+                                <li class="menu-item menu-item-has-children"><a href="#">More</a>
                                     <ul class="sub-menu">
-                                        <li class="menu-item"><a href="{% url 'core:about-us' %}">About Sunrise</a></li>
+                                        <li class="menu-item"><a href="{% url 'core:about-us' %}">About Retech Academy</a></li>
                                         <li class="menu-item"><a href="{% url 'blog:blog-list' %}">Blog</a>
                                             
                                         </li>
@@ -128,7 +128,7 @@
                                 </li>
                                 <li class="menu-item menu-item-has-children"><a href="apply-to-kingster.html">Admissions</a>
                                     <ul class="sub-menu">
-                                        <li class="menu-item"><a href="apply-to-kingster.html">Apply To Kingster</a></li>
+                                        <li class="menu-item"><a href="{% url 'core:apply' %}">Apply To Kingster</a></li>
                                         <li class="menu-item"><a href="campus-tour.html">Campus Tour</a></li>
                                         <li class="menu-item"><a href="scholarships.html">Scholarships</a></li>
                                         <li class="menu-item"><a href="athletics.html">Athletics</a></li>
@@ -268,7 +268,7 @@
                                     </li>
                                     <li class="menu-item menu-item-has-children kingster-normal-menu"><a href="apply-to-kingster.html" class="sf-with-ul-pre">Admissions</a>
                                         <ul class="sub-menu">
-                                            <li class="menu-item" data-size="60"><a href="apply-to-kingster.html">Apply To Kingster</a></li>
+                                            <li class="menu-item" data-size="60"><a href="{% url 'core:apply' %}">Apply To Kingster</a></li>
                                             <li class="menu-item" data-size="60"><a href="campus-tour.html">Campus Tour</a></li>
                                             <li class="menu-item" data-size="60"><a href="scholarships.html">Scholarships</a></li>
                                             <li class="menu-item" data-size="60"><a href="athletics.html">Athletics</a></li>

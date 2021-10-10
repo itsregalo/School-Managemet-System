@@ -5,6 +5,7 @@ app_name='core'
 
 urlpatterns = [
     path('', IndexView, name='index'),
+    path('apply/', ApplicationView, name='apply'),
     path('gallery/', GalleryView, name='gallery'),
     path('about-us/', AboutUs, name='about-us'),
     path('contact-us/', ContactUs, name='contact-us'),
