@@ -90,7 +90,7 @@ class Gallery(models.Model):
     is_approved = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.name
+        return f"{self.name}"
 
 
 class SchoolTourRequest(models.Model):

@@ -16,7 +16,7 @@ def AcademyLife(request, *args, **kwargs):
     return render(request, 'academy-life.html')
 
 def GalleryView(request, *args, **kwargs):
-    images = Gallery.objects.filter(is_approved=False)
+    images = Gallery.objects.filter(is_approved=True)
 
     context = {
         'images':images

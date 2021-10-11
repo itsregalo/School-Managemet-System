@@ -23,31 +23,30 @@
                     <div class="gdlr-core-pbf-element">
                         <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" style="padding-bottom: 60px ;">
                             <div class="gdlr-core-title-item-title-wrap clearfix">
-                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="text-transform: none ;">Grid Style</h3></div><span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption">With Space</span></div>
+                                <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " style="text-transform: none ;">RETECH Academy Gallery</h3></div><span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption"><a href="">Add New</a></span></div>
                     </div>
                     <div class="gdlr-core-pbf-element">
                         <div class="gdlr-core-gallery-item gdlr-core-item-pdb clearfix  gdlr-core-gallery-item-style-grid">
                             <div class="gdlr-core-gallery-item-holder gdlr-core-js-2 clearfix" data-layout="fitrows">
-                                <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-15 gdlr-core-column-first gdlr-core-item-pdlr gdlr-core-item-mgb">
-                                    <div class="gdlr-core-gallery-list gdlr-core-media-image">
-                                        <a class="gdlr-core-lightgallery gdlr-core-js " href="{% static 'upload/shutterstock_270733466.jpg' %}" data-lightbox-group="gdlr-core-img-group-1"><img src="{% static 'upload/shutterstock_270733466-400x377.jpg' %}" width="700" height="660" alt="" /><span class="gdlr-core-image-overlay "><i class="gdlr-core-image-overlay-icon gdlr-core-size-22 fa fa-search"  ></i></span></a>
-                                    </div>
-                                </div>
+                                
+                                
+                                {% for obj in images %}
                                 <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-15 gdlr-core-item-pdlr gdlr-core-item-mgb">
                                     <div class="gdlr-core-gallery-list gdlr-core-media-image">
-                                        <a class="gdlr-core-lightgallery gdlr-core-js " href="{% static 'upload/shutterstock_516640027.jpg' %}" data-lightbox-group="gdlr-core-img-group-1"><img src="{% static 'upload/shutterstock_516640027-400x377.jpg' %}" width="700" height="660" alt="" /><span class="gdlr-core-image-overlay "><i class="gdlr-core-image-overlay-icon gdlr-core-size-22 fa fa-search"  ></i></span></a>
+                                        
+                                        {% if obj.image %}
+                                            <a class="gdlr-core-lightgallery gdlr-core-js " href="{{ obj.image.url }}" data-lightbox-group="gdlr-core-img-group-1"><img src="{% static 'upload/shutterstock_516640027-400x377.jpg' %}" width="700" height="660" alt="" />
+                                                <span class="gdlr-core-image-overlay ">
+                                                    <i class="gdlr-core-image-overlay-icon gdlr-core-size-22 fa fa-search"  ></i>
+                                                </span>
+                                            </a>
+                                        {% endif %}
+                                            
                                     </div>
                                 </div>
-                                <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-15 gdlr-core-item-pdlr gdlr-core-item-mgb">
-                                    <div class="gdlr-core-gallery-list gdlr-core-media-image">
-                                        <a class="gdlr-core-lightgallery gdlr-core-js " href="{% static 'upload/shutterstock_734589535.jpg' %}" data-lightbox-group="gdlr-core-img-group-1"><img src="{% static 'upload/shutterstock_734589535-400x377.jpg' %}" width="700" height="660" alt="" /><span class="gdlr-core-image-overlay "><i class="gdlr-core-image-overlay-icon gdlr-core-size-22 fa fa-search"  ></i></span></a>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-15 gdlr-core-item-pdlr gdlr-core-item-mgb">
-                                    <div class="gdlr-core-gallery-list gdlr-core-media-image">
-                                        <a class="gdlr-core-lightgallery gdlr-core-js " href="{% static 'upload/shutterstock_704277943.jpg' %}" data-lightbox-group="gdlr-core-img-group-1"><img src="{% static 'upload/shutterstock_704277943-400x377.jpg' %}" width="700" height="660" alt="" /><span class="gdlr-core-image-overlay "><i class="gdlr-core-image-overlay-icon gdlr-core-size-22 fa fa-search"  ></i></span></a>
-                                    </div>
-                                </div>
+                                {% endfor %}
+                                    
+                               
                             </div>
                         </div>
                     </div>
