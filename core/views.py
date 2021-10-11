@@ -23,7 +23,7 @@ def GalleryView(request, *args, **kwargs):
     }
     return render(request, 'core/gallery.html', context)
 
-def SchoolTour(request, *args, **kwargs):
+def SchoolTourRequestView(request, *args, **kwargs):
     if request.method == 'POST':
         full_name = request.POST.get('your-name')
         date = request.POST.get('tour-date')
@@ -61,7 +61,9 @@ def SchoolTour(request, *args, **kwargs):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     return render(request, 'school-tour.html')
 
-        
+
+def DonationPageView(request, *args, **kwargs):
+     return render(request, 'donate.html')       
 
 
 def ContactUs(request, *args, **kwargs):
