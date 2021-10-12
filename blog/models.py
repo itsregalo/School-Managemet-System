@@ -60,6 +60,7 @@ class Blog(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     view_count = models.IntegerField(default=0)
     slug = models.SlugField(blank=True)
+    is_approved = models.BooleanField(default=False)
 
     class Meta:
         ordering = ['-pub_date']

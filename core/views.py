@@ -3,11 +3,18 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from .models import *
 from accounts.models import EmailSubscibers
+from blog.models import Blog
 # Create your views here.
 
 
 def IndexView(request, *args, **kwargs):
-    return render(request, 'index.html')
+    news = Blog.objects.filter(is_approved=True).order_by('-pub_date')[:3]
+    events = Event.objects.filter(is_approved=True).order_by('-event_date')[:3]
+    context = {
+        'news':news,
+        'events':events
+    }
+    return render(request, 'index.html', context)
 
 def ApplicationView(request, *args, **kwargs):
     return render(request, 'core/apply-procedure.html')
@@ -75,6 +82,8 @@ def DonationPageView(request, *args, **kwargs):
 def ScholarshipView(request, *args, **kwargs):
     return render(request, 'core/scholarships.html')     
 
+def AlumniView(request, *args, **kwargs):
+    return render(request, 'core/alumni.html')
 
 def ContactUs(request, *args, **kwargs):
     if request.method == 'POST':
