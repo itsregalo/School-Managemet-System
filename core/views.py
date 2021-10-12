@@ -23,6 +23,13 @@ def GalleryView(request, *args, **kwargs):
     }
     return render(request, 'core/gallery.html', context)
 
+def EventListView(request, *args, **kwargs):
+    events = Event.objects.filter(is_approved=True)
+    context = {
+        'events':events
+    }
+    return render(request, 'core/event-calender.html', context)
+
 def SchoolTourRequestView(request, *args, **kwargs):
     if request.method == 'POST':
         full_name = request.POST.get('your-name')

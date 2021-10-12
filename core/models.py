@@ -52,11 +52,18 @@ class Event(models.Model):
     location = models.CharField(max_length=254)
     event_date = models.DateTimeField(blank=True, null=True)
     slug = models.SlugField(blank=True)
+    event_pic = models.ImageField(upload_to='images/events/%Y/%m/%d/', 
+                                default='images/event.jpg')
+    pic_thumbnail = ImageSpecField(source='event_pic',
+                                   processors = [ResizeToFill(400,257)],
+                                   format='JPEG',
+                                   options = {'quality':100})
     is_approved = models.BooleanField(default=True)
 
     class Meta:
         verbose_name = 'Event'
         verbose_name_plural = 'Events'
+        ordering = ['-event_date']
 
     def save(self, *args, **kwargs):
         if not self.slug:

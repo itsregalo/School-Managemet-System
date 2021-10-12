@@ -12,5 +12,6 @@ urlpatterns = [
     path('contact-us/', ContactUs, name='contact-us'),
     path('contact/', ContactPage, name='contact'),
     path('school-tour/', SchoolTourRequestView, name='school-tour'),
-    path('donations/', DonationPageView, name='donation')
+    path('donations/', DonationPageView, name='donation'),
+    path('events/', EventListView, name='events')
 ]
