@@ -13,7 +13,7 @@ def ApplicationView(request, *args, **kwargs):
     return render(request, 'apply-procedure.html')
 
 def AcademyLife(request, *args, **kwargs):
-    return render(request, 'academy-life.html')
+    return render(request, 'core/academy-life.html')
 
 def GalleryView(request, *args, **kwargs):
     images = Gallery.objects.filter(is_approved=True)
@@ -28,7 +28,7 @@ def EventListView(request, *args, **kwargs):
     context = {
         'events':events
     }
-    return render(request, 'core/event-calender.html', context)
+    return render(request, 'core/event-calendar.html', context)
 
 def SchoolTourRequestView(request, *args, **kwargs):
     if request.method == 'POST':
@@ -66,11 +66,11 @@ def SchoolTourRequestView(request, *args, **kwargs):
         message = 'Thank you for reaching us, We will contact you with the datails you have provided'
         send_mail(subject,message, email,["contact@greengarnetsfilms.com"],fail_silently=True)
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-    return render(request, 'school-tour.html')
+    return render(request, 'core/school-tour.html')
 
 
 def DonationPageView(request, *args, **kwargs):
-     return render(request, 'donate.html')       
+     return render(request, 'core/donate.html')       
 
 
 def ContactUs(request, *args, **kwargs):
@@ -93,7 +93,7 @@ def ContactUs(request, *args, **kwargs):
         send_mail(subject,message, email,["contact@greengarnetsfilms.com"],fail_silently=True)
         messages.success(request, "Thank you for your feedback")
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
-    return render(request, 'contact-us.html')
+    return render(request, 'core/contact.html')
 
 def AboutUs(request, *args, **kwargs):
     return render(request, 'about-us.html')
