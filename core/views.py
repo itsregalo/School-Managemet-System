@@ -10,7 +10,7 @@ def IndexView(request, *args, **kwargs):
     return render(request, 'index.html')
 
 def ApplicationView(request, *args, **kwargs):
-    return render(request, 'apply-procedure.html')
+    return render(request, 'core/apply-procedure.html')
 
 def AcademyLife(request, *args, **kwargs):
     return render(request, 'core/academy-life.html')
@@ -70,7 +70,10 @@ def SchoolTourRequestView(request, *args, **kwargs):
 
 
 def DonationPageView(request, *args, **kwargs):
-     return render(request, 'core/donate.html')       
+     return render(request, 'core/donate.html')  
+
+def ScholarshipView(request, *args, **kwargs):
+    return render(request, 'core/scholarships.html')     
 
 
 def ContactUs(request, *args, **kwargs):
