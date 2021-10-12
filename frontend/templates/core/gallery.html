@@ -35,7 +35,8 @@
                                     <div class="gdlr-core-gallery-list gdlr-core-media-image">
                                         
                                         {% if obj.image %}
-                                            <a class="gdlr-core-lightgallery gdlr-core-js " href="{{ obj.image.url }}" data-lightbox-group="gdlr-core-img-group-1"><img src="{% static 'upload/shutterstock_516640027-400x377.jpg' %}" width="700" height="660" alt="" />
+                                            <a class="gdlr-core-lightgallery gdlr-core-js " href="{{ obj.image.url }}" data-lightbox-group="gdlr-core-img-group-1">
+                                                <img src="{{ obj.image_grid.url }}" width="700" height="660" alt="" />
                                                 <span class="gdlr-core-image-overlay ">
                                                     <i class="gdlr-core-image-overlay-icon gdlr-core-size-22 fa fa-search"  ></i>
                                                 </span>
