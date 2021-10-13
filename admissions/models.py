@@ -8,9 +8,15 @@ from django.urls import reverse
 from django.utils import timezone
 
 
+SALUTATIONS = [
+    ('Mr','Mr'),
+    ('Mrs','Mrs'),
+    ('Miss', 'Miss'),
+    ('Madam','Madam')
+]
+
 User=settings.AUTH_USER_MODEL
 class Student(models.Model):
-    user = models.OneToOneField(User, on_delete=DO_NOTHING)
     admission_no = models.CharField(unique=True, max_length=10, blank=True, null=True)
     first_name = models.CharField(max_length=100)
     middle_name = models.CharField(max_length=100, blank=True)
@@ -42,8 +48,11 @@ class Parent(models.Model):
         return f"{self.first_name} {self.last_name}"
 
 class Teacher(models.Model):
+    salutation = models.CharField(choices=SALUTATIONS, max_length=100)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
+    phone_no = models.CharField(max_length=13)
+    email = models.EmailField(blank=True, null=True)
     teacher_no = models.CharField(max_length=50)
 
     def __str__(self):
