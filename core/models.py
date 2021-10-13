@@ -16,7 +16,12 @@ class AcademicSession(models.Model):
 class AcademicTerm(models.Model):
     name = models.CharField(max_length=254)
     current = models.BooleanField(default=False)
+    slug = models.SlugField(blank=True)
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = text.slugify(self.name)
+        return super(AcademicTerm, self).save(*args, **kwargs)
     class Meta:
         ordering=['-name']
 
@@ -25,6 +30,12 @@ class AcademicTerm(models.Model):
 
 class StudentClass(models.Model):
     name = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(blank=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = text.slugify(self.name)
+        return super(StudentClass, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = "Class"
