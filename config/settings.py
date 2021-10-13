@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'mptt',
     'taggit',
+    'import_export',
 ]
 
 REST_FRAMEWORK = {
