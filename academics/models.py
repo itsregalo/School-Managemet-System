@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models.fields.related import ForeignKey
 from django.utils.text import slugify
-from admissions.models import Student
+from admissions.models import Student, Teacher
 from .utils import grade_score
 from core.models import StudentClass, AcademicSession, AcademicTerm
 # Create your models here.
@@ -12,15 +12,6 @@ class Department(models.Model):
 
     def __str__(self):
         return self.name
-
-class Teacher(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    subjects = models.ManyToManyField('Subject')
-    tsc_no = models.CharField(max_length=50)
-
-    def __str__(self):
-        return f"{self.first_name} {self.last_name}"
 
 class Subject(models.Model):
     name = models.CharField(max_length=100)
