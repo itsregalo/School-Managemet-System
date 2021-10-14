@@ -1,7 +1,6 @@
 from django.db import models
-from django.db.models.fields.related import ForeignKey
 from django.utils.text import slugify
-from admissions.models import Student
+from school_apps.admissions.models import Student
 from .utils import grade_score
 from core.models import StudentClass, AcademicSession, AcademicTerm
 # Create your models here.

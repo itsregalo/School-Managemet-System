@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from admissions.models import Student
+from school_apps.admissions.models import Student
 from .models import *
 # Create your views here.
 

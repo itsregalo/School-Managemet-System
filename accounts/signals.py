@@ -1,5 +1,5 @@
 from accounts.models import *
-from admissions.models import Student
+from school_apps.admissions.models import Student
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 

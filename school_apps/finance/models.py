@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models.deletion import DO_NOTHING
 from core.models import StudentClass, AcademicSession, AcademicTerm
-from admissions.models import Student
+from school_apps.admissions.models import Student
 from django import utils
 from django.urls import reverse
 # Create your models here.

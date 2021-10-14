@@ -22,9 +22,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls', namespace='user')),
     path('', include('core.urls', namespace='core')),
-    path('finance/', include('finance.urls', namespace='finance')),
+    path('finance/', include('school_apps.finance.urls', namespace='finance')),
     path('utilities/', include('utilities.urls', namespace='utilities')),
-    path('student-portal/', include('studentportal.urls', namespace='studentportal')),
+    path('student-portal/', include('school_apps.studentportal.urls', namespace='studentportal')),
     path('blog/', include('blog.urls', namespace='blog')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

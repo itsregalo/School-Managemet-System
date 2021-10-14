@@ -41,12 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'core',
-    'studentportal',
     'accounts',
     'utilities',
-    'finance',
-    'academics',
-    'admissions',
+    'school_apps.studentportal',
+    'school_apps.finance',
+    'school_apps.academics',
+    'school_apps.admissions',
     'blog',
 
     'rest_framework',
