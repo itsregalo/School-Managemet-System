@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls', namespace='user')),
     path('', include('core.urls', namespace='core')),
+    path('academics/', include('academics.urls', namespace='academics')),
     path('finance/', include('school_apps.finance.urls', namespace='finance')),
     path('utilities/', include('utilities.urls', namespace='utilities')),
     path('student-portal/', include('school_apps.studentportal.urls', namespace='studentportal')),

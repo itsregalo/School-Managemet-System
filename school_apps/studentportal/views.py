@@ -10,4 +10,4 @@ def myPortal(request, *args, **kwargs):
     context = {
         'student_profile':student_profile
     }
-    return render(request, 'student-portal/portal.html', context)
+    return render(request, 'student-portal/main.html', context)
