@@ -10,19 +10,19 @@ from django.http import HttpResponseRedirect
 
 
 @login_required
-def add_student_via_file(request, *args, **kwargs):
+def add_results_via_file(request, *args, **kwargs):
     results = Result.objects.all()
     
     if request.method == 'POST':        
         result_resourse = ResultResource()
         dataset = Dataset()
-        new_student = request.FILES.get('student-file')
+        new_results = request.FILES.get('student-file')
         
-        if not new_student.name.endswith('xlsx'):
+        if not new_results.name.endswith('xlsx'):
             messages.error(request, 'The file must be in excel format')
             return render(request, 'admin-student-list.html')
         
-        imported_data = dataset.load(new_student.read(), format='xlsx')
+        imported_data = dataset.load(new_results.read(), format='xlsx')
         for data in imported_data:
             value = Result(
                 data[0], 
@@ -32,10 +32,10 @@ def add_student_via_file(request, *args, **kwargs):
                 data[4]
             )
             value.save()
-            messages.success(request, "contacts saved")
+            messages.success(request, "results saved")
     
     context = {
         'results':results
     }
     
-    return HttpResponseRedirect(reverse('mainapp:contacts'))
+    return HttpResponseRedirect(reverse('mainapp:results'))
