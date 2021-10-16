@@ -22,6 +22,8 @@ def StudentDetail(request, pk, *args, **kwargs):
     }
     return render(request, 'admission/sigle-student.html')
 
+
+#to be added by officials
 @login_required
 def add_student_via_file(request, *args, **kwargs):
         
