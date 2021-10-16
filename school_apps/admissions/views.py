@@ -23,7 +23,7 @@ def StudentDetail(request, pk, *args, **kwargs):
     return render(request, 'admission/sigle-student.html')
 
 @login_required
-def add_contact_via_file(request, *args, **kwargs):
+def add_student_via_file(request, *args, **kwargs):
         
     students = StudentResource.objects.all()
     
