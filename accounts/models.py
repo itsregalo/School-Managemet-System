@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, PermissionsMixin
 from django.dispatch import receiver
 from django.urls import reverse
 from PIL import Image
@@ -20,7 +20,7 @@ STAFF_CHOICES = [
     ("Quality Officer", "Quality Officer")
 ]
 
-class CustomUser(AbstractUser):
+class CustomUser(AbstractUser, PermissionsMixin):
     is_superuser = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
     is_teacher = models.BooleanField(default=False)
