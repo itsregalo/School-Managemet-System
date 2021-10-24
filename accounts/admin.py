@@ -7,7 +7,15 @@ from django.contrib.auth.admin import UserAdmin
 
 class CustomUserAdmin(UserAdmin):
     fieldsets = (
-        (None, {
+        ('basic info', {
+            "fields": (
+                'username',
+                'email',
+                'first_name',
+                'last_name',
+            ),
+        }),
+        ('category', {
             "fields": (
                 'is_superuser',
                 'is_staff',
