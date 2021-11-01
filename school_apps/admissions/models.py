@@ -24,6 +24,7 @@ GENDER = [
 
 User=settings.AUTH_USER_MODEL
 class Student(models.Model):
+    user = models.OneToOneField(User, on_delete=models.DO_NOTHING)
     admission_no = models.CharField(unique=True, max_length=10, blank=True, null=True)
     first_name = models.CharField(max_length=100)
     middle_name = models.CharField(max_length=100, blank=True)
