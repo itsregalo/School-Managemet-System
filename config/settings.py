@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'school_apps.finance',
     'school_apps.academics',
     'school_apps.admissions',
+    'school_apps.staffportal',
     'blog',
 
     'rest_framework',
