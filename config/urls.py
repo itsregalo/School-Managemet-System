@@ -26,6 +26,7 @@ urlpatterns = [
     path('finance/', include('school_apps.finance.urls', namespace='finance')),
     path('utilities/', include('utilities.urls', namespace='utilities')),
     path('student/', include('school_apps.studentportal.urls', namespace='studentportal')),
+    path('staff/', include('school_apps.staffportal.urls', namespace='staff')),
     path('blog/', include('blog.urls', namespace='blog')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
