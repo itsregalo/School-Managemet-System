@@ -31,7 +31,8 @@ def StudentLogin(request, *args, **kwargs):
             logout(request)
             return render(request,'auth/login.html')       
         messages.error(request,"invalid Login! Try again")
-        return render(request,'auth/login.html')
+        return render(request,'admin-pages/auth/login.html')
+    return render(request,'admin-pages/auth/login.html')
 
 def StudentLogOutView(request, *args, **kwargs):
     logout(request)
