@@ -12,6 +12,7 @@ def create_user_profile(sender,instance,created,**kwargs):
         Token.objects.create(user=instance) 
     if instance.is_student==True:
         Student.objects.create(user=instance)
+        
 
 @receiver(post_save, sender=CustomUser)
 def save_user_profile(sender, instance, **kwargs):
