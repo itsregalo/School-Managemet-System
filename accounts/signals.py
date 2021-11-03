@@ -11,7 +11,10 @@ def create_user_profile(sender,instance,created,**kwargs):
         Profile.objects.create(user=instance)
         Token.objects.create(user=instance) 
     if instance.is_student==True:
-        Student.objects.create(user=instance)
+        try:
+            Student.objects.create(user=instance)
+        except:
+            pass
         
 
 @receiver(post_save, sender=CustomUser)
