@@ -57,6 +57,7 @@ class Parent(models.Model):
         return f"{self.first_name} {self.last_name}"
 
 class Teacher(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     salutation = models.CharField(choices=SALUTATIONS, max_length=100)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
