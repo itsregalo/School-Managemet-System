@@ -7,6 +7,10 @@ from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
+
+def AdmissionIndex(request, *args, **kwargs):
+    return render(request, 'admissions/index.html')
+
 def StudentList(request, *args, **kwargs):
     students = Student.objects.filter(has_cleared=False)
     context = {
