@@ -46,4 +46,4 @@ def StaffPortal(request, *args, **kwargs):
     context = {
         'teacher_profile':teacher_profile
     }
-    return render(request, 'staff-portal/index.html', context)
+    return render(request, 'staffportal/index.html', context)
