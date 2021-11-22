@@ -6,7 +6,7 @@ from pilkit.processors.resize import ResizeToFill
 
 class SliderImage(models.Model):
     name = models.CharField(max_length=254)
-    image = models.ImageField(upload_to='utils/images/%Y/%m')
+    image = models.ImageField(upload_to='images/utils/%Y/%m')
     image_thumbnail = ImageSpecField(source='image',
                                     processors=[ResizeToFill(1800,1119)])
     timestamp = models.DateTimeField(auto_now_add=True)
