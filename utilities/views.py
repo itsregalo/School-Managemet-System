@@ -9,4 +9,4 @@ def displayThumbnail(request, *args, **kwargs):
     context = {
         'sliders':sliders
     }
-    return render('utils/sliders.html', context)
+    return render(request, 'utils/sliders.html', context)
