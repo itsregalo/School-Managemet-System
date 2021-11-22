@@ -108,10 +108,10 @@ def ContactUs(request, *args, **kwargs):
     return render(request, 'core/contact.html')
 
 def AboutUs(request, *args, **kwargs):
-    return render(request, 'about-us.html')
+    return render(request, 'core/about-us.html')
 
 def ContactPage(request, *args, **kwargs):
-    return render(request, 'contact.html')
+    return render(request, 'core/contact.html')
 
 def EmailSubscribersView(request, *args, **kwargs):
     sub_emails = EmailSubscibers.objects.filter(is_verified=True)
