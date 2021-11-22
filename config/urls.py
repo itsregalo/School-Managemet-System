@@ -24,10 +24,10 @@ urlpatterns = [
     path('', include('core.urls', namespace='core')),
     path('academics/', include('school_apps.academics.urls', namespace='academics')),
     path('finance/', include('school_apps.finance.urls', namespace='finance')),
-    path('utilities/', include('utilities.urls', namespace='utilities')),
     path('student/', include('school_apps.studentportal.urls', namespace='studentportal')),
     path('staff/', include('school_apps.staffportal.urls', namespace='staff')),
     path('blog/', include('blog.urls', namespace='blog')),
+    path('utilities/', include('utilities.urls', namespace='utils')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,10 +1,10 @@
 from django.urls import path
 
-from utilities.models import SliderImage
+from django.urls import path
 from . import views
 
 app_name = 'utils'
 
 urlpatterns = [
-    path('sliders/', SliderImage, name='sliders')
+    path('sliders/', views.displayThumbnail, name='sliders')
 ]
