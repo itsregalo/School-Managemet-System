@@ -9,7 +9,9 @@ class AcademicSession(models.Model):
     name = models.CharField(max_length=250, unique=True)
     current = models.BooleanField(default=False)
     class Meta:
-         ordering = ['-name']
+        verbose_name = "Academic Session"
+        verbose_name_plural = "Academic Sessions"
+        ordering = ['-name']
 
     def __str__(self):
         return self.name
@@ -24,6 +26,8 @@ class AcademicTerm(models.Model):
             self.slug = text.slugify(self.name)
         return super(AcademicTerm, self).save(*args, **kwargs)
     class Meta:
+        verbose_name = "Academic Term"
+        verbose_name_plural = "Academic Terms"
         ordering=['-name']
 
     def __str__(self):
@@ -32,6 +36,10 @@ class AcademicTerm(models.Model):
 class StudentClass(models.Model):
     name = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(blank=True)
+
+    class Meta:
+        verbose_name = "Student Class"
+        verbose_name_plural = "Student Classes"
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -68,6 +76,7 @@ class Event(models.Model):
         if not self.slug:
             self.slug = text.slugify(self.title)
         return super(Event, self).save(*args, **kwargs)
+
 class NewsCategory(models.Model):
     name = models.CharField(max_length=254)
     slug = models.SlugField(blank=True)
@@ -97,6 +106,10 @@ class News(models.Model):
     slug = models.SlugField(blank=True)
     uuid = models.UUIDField(blank=True, null=True)
 
+    class Meta:
+        verbose_name = 'News'
+        verbose_name_plural = "News"
+
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
@@ -118,6 +131,10 @@ class Gallery(models.Model):
                                    format='JPEG',
                                    options = {'quality':100})
     is_approved = models.BooleanField(default=False)
+
+    class Meta:
+        verbose_name = "Gallery"
+        verbose_name_plural = "Galleries"
 
     def __str__(self):
         return f"{self.name}"
