@@ -80,6 +80,7 @@ class NewsCategory(models.Model):
         if not self.slug:
             self.slug = text.slugify(self.name)
         return super(NewsCategory, self).save(*args, **kwargs)
+
 class News(models.Model):
     title = models.CharField(max_length=254)
     image = models.ImageField(upload_to='images/news/%Y/%m/%d/')
@@ -92,7 +93,7 @@ class News(models.Model):
                                    format='JPEG',
                                    options = {'quality':100})
     timestamp = models.DateTimeField(auto_now_add=True)
-    news_file = models.FileField(upload_to='files/news/%Y/%m/%d')
+    news_file = models.FileField(upload_to='files/news/%Y/%m/%d', blank=True, null=True)
     slug = models.SlugField(blank=True)
     uuid = models.UUIDField(blank=True, null=True)
 
