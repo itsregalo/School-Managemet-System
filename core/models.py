@@ -2,6 +2,7 @@ from django.db import models
 from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 from django.utils import text
+from django.utils.text import slugify
 # Create your models here.
 
 class AcademicSession(models.Model):
@@ -45,19 +46,6 @@ class StudentClass(models.Model):
     def __str__(self):
         return self.name
 
-class NewsCategory(models.Model):
-    name = models.CharField(max_length=254)
-    slug = models.SlugField(blank=True)
-
-    class Meta:
-        verbose_name = 'News Category'
-        verbose_name_plural = 'News Categories'
-
-    def save(self, *args, **kwargs):
-        if not self.slug:
-            self.slug = text.slugify(self.name)
-        return super(NewsCategory, self).save(*args, **kwargs)
-
 class Event(models.Model):
     title = models.CharField(max_length=254)
     location = models.CharField(max_length=254)
@@ -80,7 +68,18 @@ class Event(models.Model):
         if not self.slug:
             self.slug = text.slugify(self.title)
         return super(Event, self).save(*args, **kwargs)
+class NewsCategory(models.Model):
+    name = models.CharField(max_length=254)
+    slug = models.SlugField(blank=True)
 
+    class Meta:
+        verbose_name = 'News Category'
+        verbose_name_plural = 'News Categories'
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = text.slugify(self.name)
+        return super(NewsCategory, self).save(*args, **kwargs)
 class News(models.Model):
     title = models.CharField(max_length=254)
     image = models.ImageField(upload_to='images/news/%Y/%m/%d/')
@@ -93,6 +92,18 @@ class News(models.Model):
                                    format='JPEG',
                                    options = {'quality':100})
     timestamp = models.DateTimeField(auto_now_add=True)
+    news_file = models.FileField(upload_to='files/news/%Y/%m/%d')
+    slug = models.SlugField(blank=True)
+    uuid = models.UUIDField(blank=True, null=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super(News, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return self.name
+    
 
 class Gallery(models.Model):
     name = models.CharField(max_length=254)

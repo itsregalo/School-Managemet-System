@@ -2198,7 +2198,7 @@ body.admin-bar .kingster-fixed-navigation.kingster-style-slide {
 /* page title */
 
 .kingster-page-title-wrap {
-	background-image: url('../images/page-title-background.jpg');
+	background-image: url('/static/images/page-title-background.jpg');
 	background-position: center;
 	background-size: cover;
 	position: relative;
