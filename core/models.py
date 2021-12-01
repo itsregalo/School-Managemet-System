@@ -77,6 +77,9 @@ class Event(models.Model):
             self.slug = text.slugify(self.title)
         return super(Event, self).save(*args, **kwargs)
 
+    def __str__(self):
+        return self.title
+
 class NewsCategory(models.Model):
     name = models.CharField(max_length=254)
     slug = models.SlugField(blank=True)
