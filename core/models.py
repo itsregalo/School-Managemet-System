@@ -58,6 +58,9 @@ class Event(models.Model):
     title = models.CharField(max_length=254)
     location = models.CharField(max_length=254)
     event_date = models.DateTimeField(blank=True, null=True)
+    description = models.TextField(blank=True, null=True)
+    event_file = models.FileField(upload_to='files/event/%Y/%m/%d',
+                                    blank=True, null=True)
     slug = models.SlugField(blank=True)
     event_pic = models.ImageField(upload_to='images/events/%Y/%m/%d/', 
                                 default='images/event.jpg')
