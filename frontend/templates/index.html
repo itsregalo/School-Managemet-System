@@ -664,6 +664,8 @@
                                             </div>
                                         </div>
                                         <div class="gdlr-core-event-item-holder clearfix">
+                                            
+                                            {% for event in events %}
                                             <div class="gdlr-core-event-item-list gdlr-core-style-widget gdlr-core-item-pdlr  clearfix" id="div_1dd7_97">
                                                 <span class="gdlr-core-event-item-info gdlr-core-type-start-date-month">
                                                     <span class="gdlr-core-date" >07</span>
@@ -671,7 +673,7 @@
                                                 </span>
                                                 <div class="gdlr-core-event-item-content-wrap">
                                                     <h3 class="gdlr-core-event-item-title">
-                                                        <a href="#" >Reunion Event : Kingster’s Alumni Golf Tour</a>
+                                                        <a href="#" >{{ event.title }}</a>
                                                     </h3>
                                                     <div class="gdlr-core-event-item-info-wrap">
                                                         <span class="gdlr-core-event-item-info gdlr-core-type-time">
@@ -684,61 +686,15 @@
                                                             <span class="gdlr-core-head" >
                                                                 <i class="icon_pin_alt" ></i>
                                                             </span>
-                                                            <span class="gdlr-core-tail">Kingster Grand Hall</span>
+                                                            <span class="gdlr-core-tail">{{ event.location }}</span>
                                                         </span>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="gdlr-core-event-item-list gdlr-core-style-widget gdlr-core-item-pdlr  clearfix" id="div_1dd7_98">
-                                                <span class="gdlr-core-event-item-info gdlr-core-type-start-date-month">
-                                                    <span class="gdlr-core-date" >01</span>
-                                                    <span class="gdlr-core-month">Jan</span>
-                                                </span>
-                                                <div class="gdlr-core-event-item-content-wrap">
-                                                    <h3 class="gdlr-core-event-item-title">
-                                                        <a href="#" >Kingster’s Alumni Hot Air Ballon Trip in Turkey</a>
-                                                    </h3>
-                                                    <div class="gdlr-core-event-item-info-wrap">
-                                                        <span class="gdlr-core-event-item-info gdlr-core-type-time">
-                                                            <span class="gdlr-core-head" >
-                                                                <i class="icon_clock_alt" ></i>
-                                                            </span>
-                                                            <span class="gdlr-core-tail">10:00 am - 4:30 pm</span>
-                                                        </span>
-                                                        <span class="gdlr-core-event-item-info gdlr-core-type-location">
-                                                            <span class="gdlr-core-head" >
-                                                                <i class="icon_pin_alt" ></i>
-                                                            </span>
-                                                            <span class="gdlr-core-tail">Kingster Grand Hall</span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="gdlr-core-event-item-list gdlr-core-style-widget gdlr-core-item-pdlr  clearfix" id="div_1dd7_99">
-                                                <span class="gdlr-core-event-item-info gdlr-core-type-start-date-month">
-                                                    <span class="gdlr-core-date" >17</span>
-                                                    <span class="gdlr-core-month">Dec</span>
-                                                </span>
-                                                <div class="gdlr-core-event-item-content-wrap">
-                                                    <h3 class="gdlr-core-event-item-title">
-                                                        <a href="#" >Fintech &#038; Key Investment Conference</a>
-                                                    </h3>
-                                                    <div class="gdlr-core-event-item-info-wrap">
-                                                        <span class="gdlr-core-event-item-info gdlr-core-type-time">
-                                                            <span class="gdlr-core-head" >
-                                                                <i class="icon_clock_alt" ></i>
-                                                            </span>
-                                                            <span class="gdlr-core-tail">1:00 pm - 5:00 pm</span>
-                                                        </span>
-                                                        <span class="gdlr-core-event-item-info gdlr-core-type-location">
-                                                            <span class="gdlr-core-head" >
-                                                                <i class="icon_pin_alt" ></i>
-                                                            </span>
-                                                            <span class="gdlr-core-tail">Kingster Grand Hall</span>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            {% endfor %}
+                                                
+                                            
+                                            
                                         </div>
                                     </div>
                                 </div>
