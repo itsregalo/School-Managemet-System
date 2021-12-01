@@ -125,3 +125,6 @@ def EmailSubscribersView(request, *args, **kwargs):
         new_sub.save()
         messages.success(request, 'Successfully subscribed')
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+def handle404(request, exception):
+    return render(request, 'core/404.html')
