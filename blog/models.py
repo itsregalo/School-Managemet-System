@@ -100,6 +100,7 @@ class BlogComment(MPTTModel):
     timestamp = models.DateTimeField(auto_now_add=True)
     parent = TreeForeignKey('self', on_delete=models.CASCADE, 
                 null=True, blank=True, related_name='children')
+    is_approved = models.BooleanField(default=False)
     
     class MPTTMeta:
         order_insertion_by = ['timestamp']
