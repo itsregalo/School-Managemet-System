@@ -19,6 +19,10 @@ class Category(models.Model):
     name=models.CharField(max_length=255)
     slug = models.SlugField(blank=True)
     view_count = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        verbose_name='category'
+        verbose_name_plural='categories'
     
     def __str__(self):
         return self.name
@@ -34,6 +38,10 @@ class Category(models.Model):
 class BlogTags(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(blank=True)
+
+    class Meta:
+        verbose_name='blog tag'
+        verbose_name_plural='blog tags'
     
     def __str__(self):
         return self.name
@@ -64,6 +72,8 @@ class Blog(models.Model):
 
     class Meta:
         ordering = ['-pub_date']
+        verbose_name='blog'
+        verbose_name_plural='blogs'
     
     def __str__(self):
         return f"{self.uploaded_by.blog_name} - {self.title}"
@@ -93,6 +103,10 @@ class BlogComment(MPTTModel):
     
     class MPTTMeta:
         order_insertion_by = ['timestamp']
+
+    class Meta:
+        verbose_name='blog comment'
+        verbose_name_plural='blog comments'
 
     def __str__(self):
         return f"{self.post.title} - {self.content}"
