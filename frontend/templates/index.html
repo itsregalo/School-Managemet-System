@@ -236,72 +236,31 @@
                                                 </div>
                                             </div>
                                             <div class="gdlr-core-item-list-wrap gdlr-core-column-30">
-                                                <div class="gdlr-core-item-list gdlr-core-blog-widget gdlr-core-item-mglr clearfix gdlr-core-style-small">
-                                                    <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href="#">
-                                                            <img src="{% static 'upload/shutterstock_218235004-150x150.jpg' %}" alt="" width="150" height="150" title="Student" />
-                                                        </a>
-                                                    </div>
-                                                    <div class="gdlr-core-blog-widget-content">
-                                                        <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
-                                                            <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
-                                                                <a href="#">June 6, 2016</a>
-                                                            </span>
-                                                            <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-tag">
-                                                                <a href="#" rel="tag">Hot</a>
-                                                                <span class="gdlr-core-sep">,</span>
-                                                                <a href="#" rel="tag">Updates</a>
-                                                            </span>
+                                                
+                                                {% for obj in news %}
+                                                    <div class="gdlr-core-item-list gdlr-core-blog-widget gdlr-core-item-mglr clearfix gdlr-core-style-small">
+                                                        <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
+                                                            <a href="#">
+                                                                <img src="{{ obj.pic_thumbnail_small.url }}" alt="" width="150" height="150" title="Student" />
+                                                            </a>
                                                         </div>
-                                                        <h3 class="gdlr-core-blog-title gdlr-core-skin-title" id="h3_1dd7_12">
-                                                            <a href="#" >A Global MBA for the next generation of business leaders</a>
-                                                        </h3>
-                                                    </div>
-                                                </div>
-                                                <div class="gdlr-core-item-list gdlr-core-blog-widget gdlr-core-item-mglr clearfix gdlr-core-style-small">
-                                                    <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href="#">
-                                                            <img src="{% static 'upload/shutterstock_481869205-150x150.jpg' %}" alt="" width="150" height="150" title="shutterstock_481869205" />
-                                                        </a>
-                                                    </div>
-                                                    <div class="gdlr-core-blog-widget-content">
-                                                        <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
-                                                            <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
-                                                                <a href="#">June 6, 2016</a>
-                                                            </span>
-                                                            <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-tag">
-                                                                <a href="#" rel="tag">Admission</a>
-                                                                <span class="gdlr-core-sep">,</span>
-                                                                <a href="#" rel="tag">Event</a>
-                                                            </span>
+                                                        <div class="gdlr-core-blog-widget-content">
+                                                            <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
+                                                                    <a href="#">June 6, 2016</a>
+                                                                </span>
+                                                                <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-tag">
+                                                                    <a href="#" rel="tag">{{ obj.category.name }}</a>
+                                                                </span>
+                                                            </div>
+                                                            <h3 class="gdlr-core-blog-title gdlr-core-skin-title" id="h3_1dd7_12">
+                                                                <a href="#" >{{  obj.title }}</a>
+                                                            </h3>
                                                         </div>
-                                                        <h3 class="gdlr-core-blog-title gdlr-core-skin-title" id="h3_1dd7_13">
-                                                            <a href="#" >Professor Tom comments on voluntary recalls by snack brands</a>
-                                                        </h3>
                                                     </div>
-                                                </div>
-                                                <div class="gdlr-core-item-list gdlr-core-blog-widget gdlr-core-item-mglr clearfix gdlr-core-style-small">
-                                                    <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
-                                                        <a href="#">
-                                                            <img src="{% static 'upload/shutterstock_361397258-150x150.jpg' %}" alt="" width="150" height="150" title="shutterstock_361397258" />
-                                                        </a>
-                                                    </div>
-                                                    <div class="gdlr-core-blog-widget-content">
-                                                        <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
-                                                            <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
-                                                                <a href="#">June 6, 2016</a>
-                                                            </span>
-                                                            <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-tag">
-                                                                <a href="#" rel="tag">Article</a>
-                                                                <span class="gdlr-core-sep">,</span>
-                                                                <a href="#" rel="tag">Research</a>
-                                                            </span>
-                                                        </div>
-                                                        <h3 class="gdlr-core-blog-title gdlr-core-skin-title" id="h3_1dd7_14">
-                                                            <a href="#" >Professor Alexa is interviewed about Twitter&#8217;s valuation</a>
-                                                        </h3>
-                                                    </div>
-                                                </div>
+                                                {% endfor %}
+                                                    
+                                                
                                             </div>
                                         </div>
                                     </div>

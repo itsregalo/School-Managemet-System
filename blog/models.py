@@ -63,6 +63,10 @@ class Blog(models.Model):
                                    processors = [ResizeToFill(800,356)],
                                    format='JPEG',
                                    options = {'quality':100})
+    pic_thumbnail_small = ImageSpecField(source='pic',
+                                   processors = [ResizeToFill(150,150)],
+                                   format='JPEG',
+                                   options = {'quality':50})
     content = RichTextField()
     tags = TaggableManager()
     pub_date = models.DateTimeField(auto_now_add=True)
