@@ -76,7 +76,7 @@ class Blog(models.Model):
         verbose_name_plural='blogs'
     
     def __str__(self):
-        return f"{self.uploaded_by.blog_name} - {self.title}"
+        return f"{self.uploaded_by.username} - {self.title}"
     
     def save(self, *args, **kwargs):
         if not self.slug:

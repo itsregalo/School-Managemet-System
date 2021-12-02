@@ -21,6 +21,7 @@ class CustomUserAdmin(UserAdmin):
                 'is_staff',
                 'is_teacher',
                 'is_student',
+                'is_journalist'
             ),
         }),
     )
