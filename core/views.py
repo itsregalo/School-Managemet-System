@@ -12,6 +12,7 @@ def IndexView(request, *args, **kwargs):
     events = Event.objects.filter(is_approved=True).order_by('-event_date')[:3]
     context = {
         'news':news,
+        'latest_news':Blog.objects.last(),
         'events':events
     }
     return render(request, 'index.html', context)

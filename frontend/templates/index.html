@@ -214,22 +214,22 @@
                                                     <div class="gdlr-core-blog-grid ">
                                                         <div class="gdlr-core-blog-thumbnail gdlr-core-media-image  gdlr-core-opacity-on-hover gdlr-core-zoom-on-hover">
                                                             <a href="#">
-                                                                <img src="{% static 'upload/shutterstock_135948689-400x245.jpg' %}" width="700" height="430" alt="" />
+                                                                <img src="{{ latest_news.pic_thumbnail_latest.url }}" width="700" height="430" alt="" />
                                                             </a>
                                                         </div>
                                                         <div class="gdlr-core-blog-grid-content-wrap">
                                                             <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
                                                                 <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
-                                                                    <a href="#">June 6, 2016</a>
+                                                                    <a href="#">{{ latest_news.pub_date|date:'M d,Y' }}</a>
                                                                 </span>
                                                                 <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-tag">
-                                                                    <a href="#" rel="tag">Admission</a>
+                                                                    <a href="#" rel="tag">{{ latest_news.category.name }}</a>
                                                                     <span class="gdlr-core-sep">,</span>
                                                                     <a href="#" rel="tag">Student</a>
                                                                 </span>
                                                             </div>
                                                             <h3 class="gdlr-core-blog-title gdlr-core-skin-title" id="h3_1dd7_11">
-                                                                <a href="#" >Professor Albert joint research on mobile money in Tanzania</a>
+                                                                <a href="#" >{{ latest_news.title }}</a>
                                                             </h3>
                                                         </div>
                                                     </div>
@@ -247,7 +247,7 @@
                                                         <div class="gdlr-core-blog-widget-content">
                                                             <div class="gdlr-core-blog-info-wrapper gdlr-core-skin-divider">
                                                                 <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-date">
-                                                                    <a href="#">June 6, 2016</a>
+                                                                    <a href="#">{{ obj.pub_date|date:'M d,Y' }}</a>
                                                                 </span>
                                                                 <span class="gdlr-core-blog-info gdlr-core-blog-info-font gdlr-core-skin-caption gdlr-core-blog-info-tag">
                                                                     <a href="#" rel="tag">{{ obj.category.name }}</a>
