@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import SliderImagem, QuicklinkImages
+from .models import SliderImage, QuicklinkImages
 # Register your models here.
 
 class SliderImageAdmin(admin.ModelAdmin):
