@@ -5,8 +5,10 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def displayThumbnail(request, *args, **kwargs):
-    sliders = SliderImage.objects.all()
+    sliders = SliderImage.objects.all(),
+    quicklinks = QuicklinkImages.objects.all()
     context = {
-        'sliders':sliders
+        'sliders':sliders,
+        'quicklinks': quicklinks
     }
     return render(request, 'utils/sliders.html', context)
