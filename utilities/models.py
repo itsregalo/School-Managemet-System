@@ -13,4 +13,18 @@ class SliderImage(models.Model):
 
     def __str__(self):
         return self.name
+
+class QuicklinkImages(models.Model):
+    name = models.CharField(max_length=254)
+    image = models.ImageField(upload_to='images/utils/%Y/%m')
+    image_thumbnail = ImageSpecField(source='image',
+                                    processors=[ResizeToFill(800,869)])
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-timestamp']
+
+    def __str__(self):
+        return self.name
+
     
