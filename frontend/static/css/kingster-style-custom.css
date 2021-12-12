@@ -733,7 +733,10 @@ body .gdlr-core-flipbox-item .gdlr-core-flipbox-item-image {
 #h3_1dd7_13{font-size: 16px ;font-weight: 700 ;letter-spacing: 0px ;}
 #h3_1dd7_14{font-size: 16px ;font-weight: 700 ;letter-spacing: 0px ;}
 #div_1dd7_48{padding: 90px 0px 0px 65px;}
-#div_1dd7_49{background-image: url(../upload/link-bg.jpg) ;background-size: cover ;background-position: center ;}
+#div_1dd7_49{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(../upload/index/quick-links.jpg) ;
+	background-size: cover ;background-position: center ;
+}
 #div_1dd7_50{padding-bottom: 40px ;}
 #div_1dd7_51{margin: 0px 15px 0px 0px;font-size: 20px ;}
 #i_1dd7_1{color: #ffffff ;}
