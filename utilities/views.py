@@ -9,6 +9,7 @@ def displayThumbnail(request, *args, **kwargs):
     quicklinks = QuicklinkImages.objects.all()
     context = {
         'sliders':sliders,
-        'quicklinks': quicklinks
+        'quicklinks': quicklinks,
+        '400412': IndexEvent400412.objects.all()
     }
     return render(request, 'utils/sliders.html', context)
