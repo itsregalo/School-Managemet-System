@@ -102,6 +102,33 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="gdlr-core-pbf-element">
+                        <div class="gdlr-core-gallery-item gdlr-core-item-pdb clearfix  gdlr-core-gallery-item-style-grid">
+                            <div class="gdlr-core-gallery-item-holder gdlr-core-js-2 clearfix" data-layout="fitrows">
+                                
+                                
+                                {% for obj in indexwhyus %}
+                                <div class="gdlr-core-item-list gdlr-core-gallery-column  gdlr-core-column-15 gdlr-core-item-pdlr gdlr-core-item-mgb">
+                                    <div class="gdlr-core-gallery-list gdlr-core-media-image">
+                                        
+                                        {% if obj.image %}
+                                            <a class="gdlr-core-lightgallery gdlr-core-js " href="{{ obj.image.url }}" data-lightbox-group="gdlr-core-img-group-1">
+                                                <img src="{{ obj.image_thumbnail.url }}" width="700" height="660" alt="" />
+                                                <span class="gdlr-core-image-overlay ">
+                                                    <i class="gdlr-core-image-overlay-icon gdlr-core-size-22 fa fa-search"  ></i>
+                                                </span>
+                                            </a>
+                                        {% endif %}
+                                            
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                    
+                               
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
