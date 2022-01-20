@@ -83,7 +83,7 @@ class Event(models.Model):
     def __str__(self):
         return self.title
 
-class NewsCategory(models.Model):
+class NoticeCategory(models.Model):
     name = models.CharField(max_length=254)
     slug = models.SlugField(blank=True)
 
@@ -94,9 +94,9 @@ class NewsCategory(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = text.slugify(self.name)
-        return super(NewsCategory, self).save(*args, **kwargs)
+        return super(NoticeCategory, self).save(*args, **kwargs)
 
-class News(models.Model):
+class Notice(models.Model):
     title = models.CharField(max_length=254)
     image = models.ImageField(upload_to='images/news/%Y/%m/%d/')
     news_icon = ImageSpecField(source='image',
