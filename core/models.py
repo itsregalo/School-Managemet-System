@@ -112,6 +112,7 @@ class Notice(models.Model):
     news_file = models.FileField(upload_to='files/news/%Y/%m/%d', blank=True, null=True)
     slug = models.SlugField(blank=True)
     uuid = models.UUIDField(blank=True, null=True)
+    is_approved = models.BooleanField(default=True)
 
     class Meta:
         verbose_name = 'Notice'
