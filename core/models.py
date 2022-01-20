@@ -107,6 +107,7 @@ class News(models.Model):
                                    processors = [ResizeToFill(400,245)],
                                    format='JPEG',
                                    options = {'quality':100})
+    description = models.TextField(blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     news_file = models.FileField(upload_to='files/news/%Y/%m/%d', blank=True, null=True)
     slug = models.SlugField(blank=True)
