@@ -88,8 +88,8 @@ class NoticeCategory(models.Model):
     slug = models.SlugField(blank=True)
 
     class Meta:
-        verbose_name = 'News Category'
-        verbose_name_plural = 'News Categories'
+        verbose_name = 'Notice Category'
+        verbose_name_plural = 'Notice Categories'
 
     def save(self, *args, **kwargs):
         if not self.slug:
@@ -98,8 +98,8 @@ class NoticeCategory(models.Model):
 
 class Notice(models.Model):
     title = models.CharField(max_length=254)
-    image = models.ImageField(upload_to='images/news/%Y/%m/%d/')
-    news_icon = ImageSpecField(source='image',
+    image = models.ImageField(upload_to='images/notice/%Y/%m/%d/')
+    notice_icon = ImageSpecField(source='image',
                                    processors = [ResizeToFill(150,150)],
                                    format='JPEG',
                                    options = {'quality':100})
@@ -114,13 +114,13 @@ class Notice(models.Model):
     uuid = models.UUIDField(blank=True, null=True)
 
     class Meta:
-        verbose_name = 'News'
-        verbose_name_plural = "News"
+        verbose_name = 'Notice'
+        verbose_name_plural = "Notices"
 
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugify(self.title)
-        return super(News, self).save(*args, **kwargs)
+        return super(Notice, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name
