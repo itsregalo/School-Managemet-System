@@ -4,6 +4,7 @@ from django.core.mail import send_mail
 from .models import *
 from accounts.models import EmailSubscibers
 from blog.models import Blog
+from django.utils import timezone
 # Create your views here.
 
 
@@ -76,6 +77,9 @@ def SchoolTourRequestView(request, *args, **kwargs):
         return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
     return render(request, 'core/school-tour.html')
 
+def Notices(request, *args, **kwargs):
+    notices = Notice.objects.filter(timestamp__lte=timezone.now()).order_by('-timestamp')
+    return render(request, 'core/notice-list.html')
 
 def DonationPageView(request, *args, **kwargs):
      return render(request, 'core/donate.html')  
