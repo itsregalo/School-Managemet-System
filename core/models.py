@@ -98,7 +98,12 @@ class NoticeCategory(models.Model):
             self.slug = text.slugify(self.name)
         return super(NoticeCategory, self).save(*args, **kwargs)
 
+    def __str__(self):
+        return self.name
+    
+
 class Notice(models.Model):
+    notice_category = models.ForeignKey(NoticeCategory, on_delete=models.CASCADE)
     title = models.CharField(max_length=254)
     image = models.ImageField(upload_to='images/notice/%Y/%m/%d/')
     notice_icon = ImageSpecField(source='image',

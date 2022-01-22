@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import get_object_or_404, render, HttpResponseRedirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from .models import *
@@ -84,8 +84,12 @@ def Notices(request, *args, **kwargs):
     }
     return render(request, 'core/notice-list.html', context)
 
-def notice_detail(request, *args, **kwargs):
-    return(request, 'notice-detail.htmls')
+def notice_detail(request, uuid, *args, **kwargs):
+    notice = get_object_or_404(uuid=uuid)
+    context = {
+        'notice':notice
+    }
+    return(request, 'notice-detail.html', context)
 
 def DonationPageView(request, *args, **kwargs):
      return render(request, 'core/donate.html')  

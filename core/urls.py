@@ -17,4 +17,5 @@ urlpatterns = [
     path('alumni/', AlumniView, name='alumni'),
     path('events/', EventListView, name='events'),
     path('notices/', Notices, name='notices'),
+    path('notice/<uuid>/', notice_detail, name='notice-detail')
 ]

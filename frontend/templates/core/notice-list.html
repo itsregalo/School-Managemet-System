@@ -26,11 +26,19 @@
                                {% for notice in notices %}
                                <div class="gdlr-core-event-item-list gdlr-core-style-grid gdlr-core-item-pdlr gdlr-core-column-15  clearfix" style="margin-bottom: 45px ;">
                                 <div class="gdlr-core-event-item-thumbnail">
-                                    <a href="#"><img src="{{ notice.image.url }}" width="700" height="450" alt="" /></a>
+                                    <a href="{% url 'core:notice-detail' notice.uuid %}"><img src="{{ notice.image.url }}" width="700" height="450" alt="" /></a>
                                 </div><span class="gdlr-core-event-item-info gdlr-core-type-start-date-month"><span class="gdlr-core-date" >02</span><span class="gdlr-core-month">Sep</span></span>
                                 <div class="gdlr-core-event-item-content-wrap">
-                                    <h3 class="gdlr-core-event-item-title"><a href="#" >{{ notice.title }}</a></h3>
-                                    <div class="gdlr-core-event-item-info-wrap"><span class="gdlr-core-event-item-info gdlr-core-type-time"><span class="gdlr-core-head" ><i class="icon_clock_alt" ></i></span><span class="gdlr-core-tail">8:00 am - 5:00 pm</span></span><span class="gdlr-core-event-item-info gdlr-core-type-location"><span class="gdlr-core-head" ><i class="icon_pin_alt" ></i></span><span class="gdlr-core-tail">Kingster Grand Hall</span></span>
+                                    <h3 class="gdlr-core-event-item-title"><a href="{% url 'core:notice-detail' notice.uuid %}" >{{ notice.title }}</a></h3>
+                                    <div class="gdlr-core-event-item-info-wrap">
+                                        <span class="gdlr-core-event-item-info gdlr-core-type-time">
+                                            <span class="gdlr-core-head" >
+                                                <i class="icon_clock_alt" ></i>
+                                            </span>
+                                            <span class="gdlr-core-tail">{{ notice.notice_category }}</span></span>
+                                            <span class="gdlr-core-event-item-info gdlr-core-type-location">
+                                                
+                                            </span>
                                     </div>
                                 </div>
                             </div>
