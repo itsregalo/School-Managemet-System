@@ -112,7 +112,6 @@ class Notice(models.Model):
     start_time = models.TimeField(blank=True, null=True)
     end_time = models.TimeField(blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
-    news_file = models.FileField(upload_to='files/news/%Y/%m/%d', blank=True, null=True)
     slug = models.SlugField(blank=True)
     uuid = models.UUIDField(blank=True, null=True)
     is_approved = models.BooleanField(default=True)
@@ -125,6 +124,15 @@ class Notice(models.Model):
         if not self.slug:
             self.slug = slugify(self.title)
         return super(Notice, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return self.name
+    
+class NoticeFile(models.Model):
+    notice = models.ForeignKey(Notice, on_delete=models.CASCADE)
+    name = models.CharField(max_length=254)
+    file = models.FileField(upload_to='docs/notices/%Y/%m/%d')
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
