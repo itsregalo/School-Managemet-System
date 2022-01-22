@@ -1,0 +1,3 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+10:21:03	318/318	---MCZ	403	error ('Forbidden')	text/html	date:Fri,%2021%20Jan%202022%2007:23:59%20GMT	https://www.javatpoint.com/artificial-intelligence-tutorial	www.javatpoint.com/artificial-intelligence-tutorial.0.delayed	(from )
+10:21:04	43/43	---M-Z	-1	error ('Open%20error%20when%20decompressing%20(can%20not%20create%20temporary%20file%20/tmp0.z)')	text/plain	etag:W/%2223-1432794392000-gzip%22	https://www.javatpoint.com/robots.txt		(from )
