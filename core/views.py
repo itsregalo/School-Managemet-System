@@ -78,11 +78,14 @@ def SchoolTourRequestView(request, *args, **kwargs):
     return render(request, 'core/school-tour.html')
 
 def Notices(request, *args, **kwargs):
-    notices = Notice.objects.all().order_by('-timestamp')
+    notices = Notice.objects.filter(is_approved=True).order_by('-timestamp')
     context = {
         'notices':notices
     }
     return render(request, 'core/notice-list.html', context)
+
+def notice_detail(request, *args, **kwargs):
+    return(request, 'notice-detail.htmls')
 
 def DonationPageView(request, *args, **kwargs):
      return render(request, 'core/donate.html')  

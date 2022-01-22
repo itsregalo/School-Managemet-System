@@ -4,6 +4,7 @@ from imagekit.processors import ResizeToFill
 from django.utils import text
 from django.utils.text import slugify
 from ckeditor.fields import RichTextField
+import uuid
 # Create your models here.
 
 class AcademicSession(models.Model):
@@ -114,7 +115,7 @@ class Notice(models.Model):
     end_time = models.TimeField(blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(blank=True)
-    uuid = models.UUIDField(blank=True, null=True)
+    uuid = models.UUIDField(default=uuid.uuid4)
     is_approved = models.BooleanField(default=True)
 
     class Meta:
