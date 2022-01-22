@@ -8,10 +8,10 @@ from blog.models import Blog
 
 
 def IndexView(request, *args, **kwargs):
-    news = Notice.objects.filter(is_approved=True).order_by('-timestamp')[:3]
+    notices = Notice.objects.filter(is_approved=True).order_by('-timestamp')[:3]
     events = Event.objects.filter(is_approved=True).order_by('-event_date')[:3]
     context = {
-        'news':news,
+        'notices':notices,
         'latest_news':Blog.objects.last(),
         'events':events
     }

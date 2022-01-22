@@ -591,7 +591,7 @@
                                         </div>
                                         <div class="gdlr-core-event-item-holder clearfix">
                                             
-                                            {% for event in events %}
+                                            {% for notice in notices %}
                                             <div class="gdlr-core-event-item-list gdlr-core-style-widget gdlr-core-item-pdlr  clearfix" id="div_1dd7_97">
                                                 <span class="gdlr-core-event-item-info gdlr-core-type-start-date-month">
                                                     <span class="gdlr-core-date" >07</span>
@@ -599,7 +599,7 @@
                                                 </span>
                                                 <div class="gdlr-core-event-item-content-wrap">
                                                     <h3 class="gdlr-core-event-item-title">
-                                                        <a href="#" >{{ event.title }}</a>
+                                                        <a href="#" >{{ notice.title }}</a>
                                                     </h3>
                                                     <div class="gdlr-core-event-item-info-wrap">
                                                         <span class="gdlr-core-event-item-info gdlr-core-type-time">
@@ -612,7 +612,7 @@
                                                             <span class="gdlr-core-head" >
                                                                 <i class="icon_pin_alt" ></i>
                                                             </span>
-                                                            <span class="gdlr-core-tail">{{ event.location }}</span>
+                                                            <!-- <span class="gdlr-core-tail">{{ n.location }}</span> -->
                                                         </span>
                                                     </div>
                                                 </div>
@@ -635,29 +635,76 @@
                             <div class="gdlr-core-pbf-background-wrap">
                                 <div class="gdlr-core-pbf-background gdlr-core-parallax gdlr-core-js" id="div_1dd7_101" data-parallax-speed="0"></div>
                             </div>
-                            <div class="gdlr-core-pbf-column-content clearfix gdlr-core-js ">
-                                <div class="gdlr-core-pbf-element">
-                                    <div class="gdlr-core-image-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-center-align" id="div_1dd7_102">
-                                        <div class="gdlr-core-image-item-wrap gdlr-core-media-image  gdlr-core-image-item-style-rectangle" id="div_1dd7_103"><img src="{% static 'upload/icon-envelope.png' %}" alt="" width="78" height="60" title="icon-envelope" /></div>
-                                    </div>
-                                </div>
-                                <div class="gdlr-core-pbf-element">
-                                    <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-center-align gdlr-core-title-item-caption-bottom gdlr-core-item-pdlr" id="div_1dd7_104">
-                                        <div class="gdlr-core-title-item-title-wrap clearfix">
-                                            <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " id="h3_1dd7_33">Subscribe To Newsletter</h3></div><span class="gdlr-core-title-item-caption gdlr-core-info-font gdlr-core-skin-caption" id="span_1dd7_9">Get updates to news & events</span></div>
-                                </div>
+                            
+                                
                                 <div class="gdlr-core-pbf-element">
                                     <div class="gdlr-core-newsletter-item gdlr-core-item-pdlr gdlr-core-item-pdb  gdlr-core-style-rectangle-full">
-
-                                        <div class="newsletter newsletter-subscription">
-                                            <form class="gdlr-core-newsletter-form clearfix" method="post" action="#">
-                                                <div class="gdlr-core-newsletter-email">
-                                                    <input class="newsletter-email gdlr-core-skin-e-background gdlr-core-skin-e-content" placeholder="Your Email Address" type="email" name="ne" size="30" required />
-                                                </div>
-                                                <div class="gdlr-core-newsletter-submit">
-                                                    <input class="newsletter-submit" type="submit" value="Subscribe" />
-                                                </div>
-                                            </form>
+                                        
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr"  id="gdlr-core-title-item-id-66469">
+                                                <div class="gdlr-core-title-item-title-wrap clearfix">
+                                                    <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " id="h3_1dd7_16"><a href="#" target="_self" >Alumni & Donors</a></h3></div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-item-pdlr gdlr-core-center-align" id="div_1dd7_52">
+                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider" id="div_1dd7_53"></div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr"  id="gdlr-core-title-item-id-42777">
+                                                <div class="gdlr-core-title-item-title-wrap clearfix">
+                                                    <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " id="h3_1dd7_17"><a href="#" target="_self" >Athletic Calendar</a></h3></div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-item-pdlr gdlr-core-center-align" id="div_1dd7_54">
+                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider" id="div_1dd7_55"></div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr"  id="gdlr-core-title-item-id-51281">
+                                                <div class="gdlr-core-title-item-title-wrap clearfix">
+                                                    <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " id="h3_1dd7_18"><a href="#" target="_self" >All Retech’s Events</a></h3></div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-item-pdlr gdlr-core-center-align" id="div_1dd7_56">
+                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider" id="div_1dd7_57"></div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr"  id="gdlr-core-title-item-id-78243">
+                                                <div class="gdlr-core-title-item-title-wrap clearfix">
+                                                    <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " id="h3_1dd7_19"><a href="#" target="_self" >Partnership & Out Reach</a></h3></div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-item-pdlr gdlr-core-center-align" id="div_1dd7_58">
+                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider" id="div_1dd7_59"></div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr"  id="gdlr-core-title-item-id-14842">
+                                                <div class="gdlr-core-title-item-title-wrap clearfix">
+                                                    <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " id="h3_1dd7_20"><a href="#" target="_self" >Academic Programs</a></h3></div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-item-pdlr gdlr-core-center-align" id="div_1dd7_60">
+                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider" id="div_1dd7_61"></div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-title-item gdlr-core-item-pdb clearfix  gdlr-core-left-align gdlr-core-title-item-caption-top gdlr-core-item-pdlr"  id="gdlr-core-title-item-id-33183">
+                                                <div class="gdlr-core-title-item-title-wrap clearfix">
+                                                    <h3 class="gdlr-core-title-item-title gdlr-core-skin-title " id="h3_1dd7_21"><a href="#" target="_self" >Tution And Fees</a></h3></div>
+                                            </div>
+                                        </div>
+                                        <div class="gdlr-core-pbf-element">
+                                            <div class="gdlr-core-divider-item gdlr-core-divider-item-normal gdlr-core-item-pdlr gdlr-core-center-align" id="div_1dd7_62">
+                                                <div class="gdlr-core-divider-line gdlr-core-skin-divider" id="div_1dd7_63"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
