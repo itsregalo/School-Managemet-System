@@ -109,6 +109,8 @@ class Notice(models.Model):
                                    options = {'quality':100})
     description = models.TextField(blank=True, null=True)
     date_of_event = models.DateField(blank=True, null=True)
+    start_time = models.TimeField(blank=True, null=True)
+    end_time = models.TimeField(blank=True, null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
     news_file = models.FileField(upload_to='files/news/%Y/%m/%d', blank=True, null=True)
     slug = models.SlugField(blank=True)
