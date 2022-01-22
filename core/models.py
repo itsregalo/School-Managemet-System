@@ -3,6 +3,7 @@ from imagekit.models import ImageSpecField
 from imagekit.processors import ResizeToFill
 from django.utils import text
 from django.utils.text import slugify
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 class AcademicSession(models.Model):
@@ -107,7 +108,7 @@ class Notice(models.Model):
                                    processors = [ResizeToFill(400,245)],
                                    format='JPEG',
                                    options = {'quality':100})
-    description = models.TextField(blank=True, null=True)
+    description = RichTextField()
     date_of_event = models.DateField(blank=True, null=True)
     start_time = models.TimeField(blank=True, null=True)
     end_time = models.TimeField(blank=True, null=True)
@@ -126,7 +127,7 @@ class Notice(models.Model):
         return super(Notice, self).save(*args, **kwargs)
 
     def __str__(self):
-        return self.name
+        return self.title
     
 class NoticeFile(models.Model):
     notice = models.ForeignKey(Notice, on_delete=models.CASCADE)
